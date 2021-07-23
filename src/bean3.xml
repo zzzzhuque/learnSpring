@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 有参构造注入属性 -->
+    <bean id="orders" class="com.zt.spring5.Orders">
+        <constructor-arg name="orderName" value="computer"></constructor-arg>
+        <constructor-arg name="address" value="China"></constructor-arg>
+<!--        <constructor-arg index="0" value="computer"></constructor-arg>-->
+<!--        <constructor-arg index="1" value="China"></constructor-arg>-->
+    </bean>
+</beans>
