@@ -3,6 +3,7 @@ package com.zt.spring5.testdemo;
 import com.zt.spring5.Book;
 import com.zt.spring5.Orders;
 import com.zt.spring5.User;
+import com.zt.spring5.autowire.Employee;
 import com.zt.spring5.collectiontype.Stu;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -56,5 +57,26 @@ public class TestSpring5 {
 
         System.out.println(stu);
         stu.printStuInfo();
+    }
+
+    @Test
+    public void testCollectionBook() {
+        // 加载Spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean8.xml");
+
+        // 获取配置创建的对象
+        com.zt.spring5.collectiontype.Book book = context.getBean("book", com.zt.spring5.collectiontype.Book.class);
+
+        System.out.println(book);
+    }
+
+    @Test
+    public void testAutowire() {
+        // 加载Spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean10.xml");
+
+        // 获取配置创建的对象
+        Employee employee = context.getBean("employee", Employee.class);
+        System.out.println(employee);
     }
 }

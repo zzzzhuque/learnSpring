@@ -2,6 +2,7 @@ package com.zt.spring5.service;
 
 import com.zt.spring5.dao.UserDao;
 import com.zt.spring5.dao.UserDaoImpl;
+import org.springframework.stereotype.Component;
 
 public class UserService {
 

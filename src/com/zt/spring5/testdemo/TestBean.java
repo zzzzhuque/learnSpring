@@ -1,6 +1,8 @@
 package com.zt.spring5.testdemo;
 
 import com.zt.spring5.bean.Employee;
+import com.zt.spring5.collectiontype.Course;
+import com.zt.spring5.factoryBean.MyBean;
 import com.zt.spring5.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -35,5 +37,15 @@ public class TestBean {
         // 获取配置创建的对象
         Employee employee = context.getBean("employee", Employee.class);
         employee.printEmployeeInfo();
+    }
+
+    @Test
+    public void TestFactoryBean() {
+        // 加载Spring配置文件
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean9.xml");
+
+        // 获取配置创建的对象
+        Course course = context.getBean("myBean", Course.class);
+        System.out.println(course);
     }
 }

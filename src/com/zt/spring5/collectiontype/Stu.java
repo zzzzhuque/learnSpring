@@ -15,6 +15,13 @@ public class Stu {
     // Set集合
     private Set<String> sets;
 
+    // 学生所学多门课程
+    private List<Course> courseList;
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
+
     public void setSets(Set<String> sets) {
         this.sets = sets;
     }
@@ -36,5 +43,6 @@ public class Stu {
         System.out.println(list);
         System.out.println(maps);
         System.out.println(sets);
+        System.out.println(courseList);
     }
 }
